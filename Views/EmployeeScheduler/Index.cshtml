@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Employee Scheduler";
+}
+
+<body data-ng-app="APIModule">
+    <div id="tblSubs" ng-controller="SchedulerController">
+        <br/>
+        <br/>
+        <h4>Schedule Range From: {{result[0].StartDate}} To: {{result[0].EndDate}} </h4>
+        <table class="table table-hover table-bordered">
+            <tr>
+                <th>Employee</th>
+                <th>Employee</th>
+                <th>ScheduleDate</th>
+            </tr>
+            <tbody data-ng-repeat="schedule in result">
+                <tr>
+                    <td ng-repeat="e in schedule.engineer">{{e.Name}}</td>
+                    <td>{{schedule.ScheduleDate}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/API/Module.js"></script>
+<script src="~/Scripts/API/Service.js"></script>
+<script src="~/Scripts/API/SchedulerController.js"></script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
